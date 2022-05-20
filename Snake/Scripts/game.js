@@ -10,6 +10,8 @@ function main(currentTime) {
     if (gameOver) {
         if (confirm('You died!')) {
             window.location.reload()
+        } else {
+            window.location.assign("https://bloxgithub.github.io/Snakee/")
         }
         return
     }
