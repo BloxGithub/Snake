@@ -9,7 +9,7 @@ let gameOver = false
 function main(currentTime) {
     if (gameOver) {
         if (confirm('You died!')) {
-            window.location.href = '/'
+            window.location.reload()
         }
         return
     }
