@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <script type="module" src="./Scripts/game.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: black;
+        }
+
+        #game-board {
+            background-color: #CCC;
+            width: 100vmin;
+            height: 100vmin;
+            display: grid;
+            grid-template-rows: repeat(21, 1fr);
+            grid-template-columns: repeat(21, 1fr);
+        }
+
+        .snake {
+            background-color: hsl(120, 100%, 50%);
+            border: .25vmin solid black;
+        }
+
+        .food {
+            background-color: hsl(0, 100%, 50%);
+            border: .25vmin solid black;
+        }
+
+        #score {
+            margin: 10;
+            z-index: 100;
+            position: fixed;
+            top: 10;
+            left: 200;
+            color: #0055ff;
+            font-family: "Arial Black", Gadget, sans-serif;
+            transform-style: preserve-3d;
+            font-size: 30px;
+        }
+
+        #music {
+            z-index: 1000;
+            bottom: 10;
+            right: 325;
+            font-size: 50px;
+            position: fixed;
+            color: green;
+        }
+
+        #music:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="game-board"></div>
+    <div id="score"></div>
+    <div class="fa fa-music" id="music"></div>
+</body>
+
+<script>
+    const musicIcon = document.getElementById('music');
+    const music = new Audio('./Assets/Bg.mp3');
+    const colors = ['green', 'red'];
+
+    let index = 0;
+    musicIcon.addEventListener('click', (event) => {
+        musicIcon.style.color = colors[index];
+
+        if (musicIcon.style.color === 'green') {
+            music.loop = true
+            music.play();
+        } else {
+            music.pause();
+        }
+
+        if (++index >= colors.length) {
+            index = 0;
+        }
+    });
+</script>
+
+</html>
