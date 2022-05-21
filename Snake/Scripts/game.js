@@ -11,7 +11,7 @@ function main(currentTime) {
         if (confirm('You died!')) {
             window.location.reload()
         } else {
-            window.location.assign("https://bloxgithub.github.io/Snake/")
+            window.location.replace("https://bloxgithub.github.io/Snake/")
         }
         return
     }
