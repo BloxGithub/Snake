@@ -1,6 +1,7 @@
 body {
     background-image: url("./Background.jpg");
-    background-size: 1280px 905px;
+    background-size: 1600px 900px;
+    background-repeat: no-repeat;
 }
 
 h1 {
